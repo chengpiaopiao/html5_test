@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement">
+		<source src="../audios/audio.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	重置可以触发emptied事件： <button onclick="reload()">重置</button>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">video元素或audio元素所在的网络突然变为未初始化状态。</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">页面重置视频播放，可以监听到emptied事件被触发的消息</div>
+</body>
+</html>
+<script>
+	var video = null;
+	window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("emptied",function(){
+			alert("get emptied event")
+		},false);
+	};
+	
+	function reload(){
+		video.load();
+	}
+</script>
+

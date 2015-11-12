@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color: #eeeeee;
+            background-image: url(images/img1.jpg);
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <header>
+        <h1>Web Storage</h1>
+        <p>This example is designed to demonstrate usage of the W3C Web Storage API</p>
+    </header>
+
+    <form>
+        <div>
+            <label>header color: </label>
+            <input class="color" id="headercolor" value="ff0000" onchange="populateStorage();">
+        </div>
+
+        <div>
+            <label>choose image: </label>
+            <select id="bgimage" onchange="populateStorage();">
+                <option value="images/img1.jpg" selected>img1</option>
+                <option value="images/img2.jpg">img2</option>
+                <option value="images/img3.jpg">img3</option>
+            </select>
+        </div>
+
+        <!--<div>-->
+            <!--<label>save changes: </label>-->
+            <!--<button id="savebutton">Save</button>-->
+        <!--</div>-->
+
+        <div>
+            <label>clear storage: </label>
+            <button id="clearbutton">clear</button>
+        </div>
+    </form>
+
+    <footer>
+        <a href="../../index.html">Index</a>
+    </footer>
+
+</body>
+    <script>
+        function $(id){ return document.getElementById(id); }
+        function S(selector){ return document.querySelector(selector);}
+
+        if(!localStorage.getItem('color')){
+            populateStorage();
+        }else{
+            setStyles();
+        }
+
+        function populateStorage(){
+            localStorage.setItem('color', $('headercolor').value);
+            localStorage.setItem('image', $('bgimage').value);
+
+            setStyles();
+        }
+
+        function setStyles(){
+            var currentBgcolor = localStorage.getItem('color');
+            var currentImage = localStorage.getItem('image');
+
+            $('headercolor').value = currentBgcolor;
+            $('bgimage').value = currentImage;
+
+            S('header').style.color = '#' + currentBgcolor;
+            S('body').style.backgroundImage = 'url(' + currentImage + ')';
+        }
+
+//        document.getElementById('headercolor').onchange = populateStorage();
+//        document.getElementById('bgimage').onchange = populateStorage();
+
+//        $('savebutton').onclick = function(){
+//           populateStorage();
+//        }
+
+        $('clearbutton').onclick = function(){
+            localStorage.clear();
+        }
+    </script>
+</html>

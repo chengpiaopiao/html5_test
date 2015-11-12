@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" controls id="videoElement">
+		<source src="../videos/movie.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">浏览器尝试获取媒体数据失败。</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">没有合适的视频，页面测试的时候无法模拟该场景。</div>
+</body>
+</html>
+<script>
+	function init(){
+		var video = document.getElementById("videoElement");
+		video.addEventListener("stalled",function(){
+			alert("get stalled event")
+		},false);
+	};
+	window.onload = init;
+</script>
+

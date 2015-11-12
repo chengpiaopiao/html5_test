@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<style>
+table td{
+	width:300px;
+}
+</style>
+<script>
+function supportCanvas() {
+	return !!document.createElement("canvas").getContext;
+}
+
+function initPage(){
+	var tipObj = document.getElementById("test_ret");
+	if(supportCanvas()) {
+		tipObj.innerHTML = "您的浏览器支持Canvas标签。";
+	}  else {
+		tipObj.innerHTML = "您的浏览器不支持Canvas标签。";
+	}
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+
+<body onLoad="initPage()">
+<div id="test_ret"></div>
+</body>
+</html>

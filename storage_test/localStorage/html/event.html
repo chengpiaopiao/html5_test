@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        td{
+
+        }
+    </style>
+    <title>storageEvent</title>
+</head>
+
+<body>
+    <header>
+        <p>event.html</p>
+    </header>
+
+    <content>
+
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#FFFF00">
+                <td><strong>属性</strong></td>
+                <td><strong>值</strong></td>
+            </tr>
+            <form name="form1">
+                <tr>
+                    <td width="20%">url</td>
+                    <td width="80%" id="url"></td>
+                </tr>
+                <tr>
+                    <td>key</td>
+                    <td id="key"></td>
+                </tr>
+                <tr>
+                    <td>oldValue</td>
+                    <td id="oldValue"></td>
+                </tr>
+                <tr>
+                    <td>newValue</td>
+                    <td id="newValue"></td>
+                </tr>
+                <tr>
+                    <td>storageArea</td>
+                    <td id="storageArea"></td>
+                </tr>
+            </form>
+        </table>
+
+    </content>
+
+    <footer>
+    </footer>
+
+</body>
+
+<script>
+    function $(id){ return document.getElementById(id); }
+    function S(sector){ return document.querySelector(sector); }
+
+    function handle_storage(e){
+        if(!e){
+            e = window.event;
+        }
+
+        if(e.url){
+            $('url').innerHTML = '' + e.url;
+        }
+        if(e.key){
+            $('key').innerHTML = '' + e.key;
+        }
+        if(e.oldValue){
+            $('oldValue').innerHTML = '' + e.oldValue;
+        }
+        if(e.newValue){
+            $('newValue').innerHTML = '' + e.newValue;
+        } else if(e.newValue == null){
+            $('newValue').innerHTML = '';
+        }
+        if(e.storageArea){
+            $('storageArea').innerHTML = JSON.stringify(e.storageArea);
+        }
+
+        console.log('handle storage!');
+    }
+
+    if (window.addEventListener){
+        window.addEventListener('storage', handle_storage, true);
+    } else {
+        window.attachEvent('onstorage', handle_storage);
+    }
+
+</script>
+</html>

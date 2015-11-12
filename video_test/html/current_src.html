@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<!--
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css"/>-->
+</head>
+
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" autoplay source src="../videos/movie.mp4" id="videoElement">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	当前视频SRC： <div id="videosrc"></div>
+	<script>
+		var video = document.getElementById("videoElement");
+		document.getElementById("videosrc").innerHTML = video.currentSrc;
+	</script>
+</body>
+</html>

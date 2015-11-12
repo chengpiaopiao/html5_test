@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement">
+		<source src="../audios/audio.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">播放过程中由于得不到下一帧而暂停播放(例如下一帧尚未加载完毕)，但是很快就能够得到下一帧。</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">没有合适的视频，测试未检测到该事件。</div>
+</body>
+</html>
+<script>
+	var video = null;
+	//window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("watting",function(){
+			alert("get watting event")
+		},false);
+	};
+	init();
+</script>

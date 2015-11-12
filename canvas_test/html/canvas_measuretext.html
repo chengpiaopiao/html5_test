@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<style>
+body{
+	text-align:center;	
+}
+table td{
+	width:300px;
+}
+</style>
+<script>
+var canvas;
+var context
+function supportCanvas() {
+	return !!document.createElement("canvas").getContext;
+}
+
+function supportCanvasText() {
+	if (!supportCanvas) {
+		return false;
+	}
+	canvas = document.createElement("canvas");
+	//获取绘图上下文
+	context = canvas.getContext("2d"); 
+	//是否有fillText方法
+	return typeof context.fillText == "function";
+}
+function initPage(){
+	var tipObj = document.getElementById("canvas");
+	if(supportCanvasText()) {
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.font="30px Arial";
+		var txt="Hello World"
+		ctx.fillText("width:" + ctx.measureText(txt).width,10,50)
+		ctx.fillText(txt,10,100);
+	}  else {
+		tipObj.innerHTML = "您的浏览器不支持Canvas text";
+	}
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body onLoad="initPage()">
+<div id="test_ret"></div>
+<div style="margin-left: auto; margin-right: auto; width:600px; height:300px;">
+<canvas id="myCanvas" width="600" height="300" style="background:#CCC"></canvas>
+</div>
+</body>
+</html>

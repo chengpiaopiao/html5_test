@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" controls id="videoElement">
+		<source src="../videos/movie.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">volume属性(音量)被改变或muted属性(静音状态)被改变</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">更改播放控制条上的音量，能够监听到volumechange事件</div>
+</body>
+</html>
+<script>
+	var video = null;
+	window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("volumechange",function(){
+			alert("get volumechange event");
+		},false);
+	};
+	
+</script>
+

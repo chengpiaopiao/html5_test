@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" controls id="videoElement">
+		<source src="../videos/movie.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">当前播放位置被改变，可能是播放过程中的自然改变，也可能是被认为的改变，或由于播放不能连续而发生的跳变。</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">启动视频播放，能够监听到timeupdate事件。</div>
+</body>
+</html>
+<script>
+	var video = null;
+	window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("timeupdate",function(){
+			alert("get timeupdate event")
+		},false);
+	};
+	
+</script>
+

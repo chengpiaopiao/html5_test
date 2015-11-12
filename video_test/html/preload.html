@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<style>
+table td{
+	width:300px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+
+<body bgcolor="papayawhip">
+<div style="float:left">
+	<div style="width:300px;float:left;">  preload = none <br>
+		<video src="../videos/movie.mp4" preload="none" controls>
+			Your browser does not support the video tag.
+		</video>
+	</div>
+	<div style="width:300px;float:left; padding-left: 20px">  preload = metadata <br>
+		<video src="../videos/movie.mp4" preload="metadata" controls>
+			Your browser does not support the video tag.
+		</video>
+	</div>
+	<div style="width:300px;float:left; padding-left: 20px">  preload = auto <br>
+		<video src="../videos/movie.mp4" preload="auto" controls>
+			Your browser does not support the video tag.
+		</video>
+	</div>
+	<div style="width:300px;float:left; padding-left: 20px">  preload = auto and autoplay<br>
+		<video src="../videos/movie.mp4" preload="auto" autoplay>
+			Your browser does not support the video tag.
+		</video>
+	</div>
+</div>
+</body>
+</html>

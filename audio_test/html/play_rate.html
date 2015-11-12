@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<style>
+table td{
+	width:300px;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement" autoplay controls>
+		<source src="../audios/audio.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	<div id="network_state"></div>
+	更改默认播放速率: <input id="defaultRate"> </input><button onclick="setDefaultRate()" >更改</button><br>
+	更改当前播放速率: <input id="currentRate"> </input><button onclick="setCurrRate()" >更改</button>
+</body>
+</html>
+<script>
+	window.onload = init;
+	function init(){
+		var video = document.getElementById("videoElement");
+		document.getElementById("currentRate").value = video.playbackRate;
+	}
+	function setDefaultRate(){
+		var value = document.getElementById("defaultRate").value;
+		var video = document.getElementById("videoElement");
+		video.defaultPlaybackRate = value;
+	}
+	function setCurrRate(){
+		var value = document.getElementById("currentRate").value;
+		var video = document.getElementById("videoElement");
+		video.playbackRate = value;
+	}
+</script>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+    </style>
+    <title>Storage.length</title>
+</head>
+
+<body>
+    <header>
+        <h1>Storage.length</h1>
+        <p>length 是 Storage 接口的只读属性，返回一个整数，表示存储在 Storage 对象里的数据项（data items）数量。</p>
+    </header>
+
+    <content>
+        <pre>
+            localStorage.setItem('key1', 'value1');
+            localStorage.setItem('key2', 'value2');
+            localStorage.setItem('key3', 'value3');
+
+        </pre>
+
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#FFFF00">
+                <td><strong>length属性</strong></td>
+                <td><strong>localStorage.length</strong></td>
+            </tr>
+            <form name="form1">
+                <tr>
+                    <td width="50%">期望值</td>
+                    <td width="50%">3</td>
+                </tr>
+                <tr>
+                    <td>当前浏览器效果</td>
+                    <td><input type="text" name="t1"></td>
+                </tr>
+            </form>
+        </table>
+
+    </content>
+
+    <footer>
+        <a href="../index.html">Index</a> |
+        <a href="supports_storage.html"><- supports_storage </a> |
+        <a href="clear.html">localStorage.clear() -></a>
+    </footer>
+
+</body>
+
+<script>
+    function populateStorage(){
+        localStorage.setItem('key1', 'value1');
+        localStorage.setItem('key2', 'value2');
+        localStorage.setItem('key3', 'value3');
+    }
+
+    window.onload = function(){
+        localStorage.clear();
+        populateStorage();
+        document.form1.t1.value = localStorage.length;
+        localStorage.clear();
+    }
+</script>
+</html>

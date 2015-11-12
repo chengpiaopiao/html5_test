@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement">
+		<source src="../audios/audio.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	播放可以触发play事件： <button onclick="play()">播放</button>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">即将开始播放，当执行了play方法时触发，或数据下载后元素被设定为autoplay属性</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">启动播放，页面触发play事件</div>
+</body>
+</html>
+<script>
+	var video = null;
+	window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("play",function(){
+			alert("get play event")
+		},false);
+	};
+	
+	function play(){
+		video.play();
+	}
+</script>
+

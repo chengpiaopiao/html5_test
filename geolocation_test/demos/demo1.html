@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h1>show my location</h1>
+    </header>
+
+    <content>
+        <p>
+            <button onclick="geoFindMe()">show my location</button>
+        </p>
+        <div id="out"></div>
+    </content>
+
+    <footer>
+
+    </footer>
+</body>
+
+<script>
+    function geoFindMe(){
+        var output = document.getElementById('out');
+
+        if(!navigator.geolocation){
+            output.innerHTML = "<p>此浏览器不支持地理位置</p>";
+            return;
+        }
+
+        function success(position){
+            var latitude = position.coords.latitude;
+            var longtitude = position.coords.longitude;
+
+            output.innerHTML = '<p>Latitude is ' + latitude + ', Longtitude is ' + longtitude +'</p>';
+
+            var img = new Image();
+            img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longtitude + "&zoom=13&size=300x300&sensor=false";
+
+            output.appendChild(img);
+        }
+
+        function error(){
+            output.innerHTML = "无法获取您的位置";
+        }
+
+        output.innerHTML = "<p>定位中...</p>";
+
+        navigator.geolocation.getCurrentPosition(success, error);
+
+    }
+</script>
+</html>

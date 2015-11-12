@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<style>
+table td{
+	width:300px;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" controls id="videoElement">
+		<source src="../videos/movie.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	<div id="network_state"></div>
+	<button onclick="getVouAndMute()" >获取当前音量和静音状态</button><br>
+	更改音量(范围 0-- 1): <input id="volume"> </input><button onclick="setVolume()" >更改</button><br>
+	静音状态(true,false): <input id="mute"> </input><button onclick="setMute()" >更改</button>
+</body>
+</html>
+<script>
+	function getVouAndMute(){
+		var video = document.getElementById("videoElement");
+		document.getElementById("volume").value = video.volume;
+		document.getElementById("mute").value = video.muted;
+	}
+	function setVolume(){
+		var value = document.getElementById("volume").value;
+		var video = document.getElementById("videoElement");
+		video.volume = value;
+	}
+	function setMute(){
+		var value = document.getElementById("mute").value;
+		var video = document.getElementById("videoElement");
+		video.muted = value;
+	}
+</script>
+

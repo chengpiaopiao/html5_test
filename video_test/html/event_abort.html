@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<video width="320" height="240" controls id="videoElement">
+		<source src="../videos/movie.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">浏览器在下载全部媒体播放数据之前中止获取媒体数据，但是并不是由错误引起的</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">无法模拟该场景，测试的时候未监听到消息。</div>
+</body>
+</html>
+<script>
+	function init(){
+		var video = document.getElementById("videoElement");
+		video.addEventListener("abort",function(){
+			alert("get abort event")
+		},false);
+	};
+	init();
+</script>
+

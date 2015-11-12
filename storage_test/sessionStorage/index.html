@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+    </style>
+    <title>Index</title>
+</head>
+
+<body>
+    <header>
+        <h1>sessionStorage</h1>
+        <p></p>
+    </header>
+
+    <content>
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#FFFF00">
+                <td><strong>检测支持</strong></td>
+                <td><strong>描述</strong></td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/supports_storage.html">supports</a></td>
+                <td width="90%"> 检测浏览器是否支持 Storage</td>
+            </tr>
+
+            <tr bgcolor="#FFFF00">
+                <td><strong>属性</strong></td>
+                <td><strong>描述</strong></td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/length.html">length</a></td>
+                <td width="90%"> length 是 Storage 接口的只读属性，返回一个整数，表示存储在 Storage 对象里的数据项（data items）数量。</td>
+            </tr>
+
+            <tr bgcolor="#FFFF00">
+                <td><strong>方法</strong></td>
+                <td><strong>描述</strong></td>
+            </tr>
+
+            <tr>
+                <td width="10%"><a href="html/clear.html">clear()</a></td>
+                <td width="90%"> 清空存储对象里所有的键值。 </td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/getItem.html">getItem()</a></td>
+                <td width="90%"> 接受一个键名（key name）作为参数，并返回对应键名的值（key's value）。 </td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/setItem.html">setItem()</a></td>
+                <td width="90%"> 接受一个键名和值作为参数，将会把键名添加到存储中，如果键名已存在，则更新其对应的值。</td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/removeItem.html">removeItem()</a></td>
+                <td width="90%"> 接受一个键名作为参数，会把该键名从存储中移除。 </td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/key.html">key()</a></td>
+                <td width="90%"> 接受一个数值 n 作为参数，返回存储对象第 n 个数据项的键名。 </td>
+            </tr>
+
+            <tr bgcolor="#FFFF00">
+                <td><strong>事件</strong></td>
+                <td><strong>描述</strong></td>
+            </tr>
+            <tr>
+                <td width="10%"><a href="html/frames.html">event</a></td>
+                <td width="90%">storage 事件主要是用于监听 localStorage 数据改变时，通知其他窗口或者标签</td>
+            </tr>
+
+            <tr bgcolor="#FFFF00">
+                <td><strong>demos</strong></td>
+                <td><strong>描述</strong></td>
+            </tr>
+
+            <tr>
+                <td width="10%"><a href="demos/demo1/demo1.html">demo1</a></td>
+                <td width="90%"> 保存设置的参数后，关闭浏览器再重新打开，浏览器还是上次保存的参数 </td>
+            </tr>
+        </table>
+
+    </content>
+
+    <footer>
+        <a href="../">storage_test</a> |
+        <a href="./html/clear.html">sessionStorage.clear() -></a>
+    </footer>
+
+</body>
+
+</html>

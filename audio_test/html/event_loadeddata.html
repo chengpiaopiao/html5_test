@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement">
+		<source src="../videos/move.mp4" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">浏览器已加载完毕当前播放位置的媒体数据，准备播放。</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">进入页面，即可监听到 loadeddata 事件被触发的消息</div>
+</body>
+</html>
+<script>
+	var video = null;
+	//window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("loadeddata",function(){
+			alert("get loadeddata event")
+		},false);
+	};
+	init();
+</script>

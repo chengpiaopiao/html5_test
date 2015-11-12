@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+    </style>
+    <title>Storage.length</title>
+</head>
+
+<body>
+    <header>
+        <h1>Detect supports</h1>
+        <p> 检测浏览器是否支持Storage</p>
+    </header>
+
+    <content>
+        <pre>
+        try{
+            return ('localStorage' in window && window['localStorage'] !== null);
+        } catch(e) {
+            return false;
+        }
+        </pre>
+
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#FFFF00">
+                <td><strong>Detect </strong></td>
+                <td><strong>localStorage</strong></td>
+            </tr>
+            <form name="form1">
+                <tr>
+                    <td width="50%">期望值</td>
+                    <td width="50%">true</td>
+                </tr>
+                <tr>
+                    <td>当前浏览器效果</td>
+                    <td><input type="text" name="t1" ></td>
+                </tr>
+            </form>
+        </table>
+
+    </content>
+
+    <footer>
+        <a href="../index.html">Index</a> |
+        <a href="length.html">localStorage.length -></a>
+    </footer>
+
+</body>
+
+<script>
+    function supports_storage(){
+        try{
+            return ('localStorage' in window && window['localStorage'] !== null);
+        } catch(e) {
+            return false;
+        }
+    }
+
+    if(supports_storage()){
+        document.form1.t1.value = '' + supports_storage();
+    }
+
+</script>
+</html>

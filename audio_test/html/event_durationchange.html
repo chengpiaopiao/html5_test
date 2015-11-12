@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Video 标签测试</title>
+<link rel="stylesheet" type="text/css" href="../../../Yangxz/marg.css" /></head>
+<body bgcolor="papayawhip" width="1200">
+	<audio width="320" height="240" controls id="videoElement">
+		<source src="../audios/audio.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	<br>
+	<div style="font-size:18px;"><strong>事件描述:</strong></div>
+	<div style="font-style: italic">播放时长被改变</div>
+	<br>
+	<div style="font-size:18px;"><strong>Chrome 测试结果：</strong></div>
+	<div style="font-style: italic">进入页面，可以监听到 durationchange 事件被触发的消息</div>
+</body>
+</html>
+<script>
+	var video = null;
+	window.onload = init;
+
+	function init(){
+		video = document.getElementById("videoElement");
+		video.addEventListener("durationchange",function(){
+			alert("get durationchange event");
+		},false);
+	};
+	
+</script>
+
